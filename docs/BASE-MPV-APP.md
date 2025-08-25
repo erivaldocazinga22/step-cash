@@ -1,5 +1,20 @@
 # Step-Cash
 
+StepCash é uma plataforma simples e intuitiva para ajudar pessoas a alcançar metas financeiras de forma organizada e motivadora.
+O usuário define um valor objetivo e o tempo desejado, e a aplicação calcula quanto deve ser poupado por dia, semana ou mês.
+
+🔹 Funcionalidades
+
+Autenticação com BetterAuth (Google, GitHub, Microsoft)
+
+Criação de metas de poupança personalizadas
+
+Tabela de acompanhamento com progresso
+
+Interface minimalista com apenas duas páginas (Home e Profile)
+
+👉 Ideal para quem quer transformar o hábito de poupar em pequenos passos consistentes.
+
 # Desafio X montante(kz,$USD,Reais)
 
 1. Escolher o valor que pretentende alcançar
