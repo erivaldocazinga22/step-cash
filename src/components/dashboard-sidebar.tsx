@@ -42,7 +42,7 @@ export function DashboardSidebar() {
 	const pathname = usePathname();
 
 	return (
-		<div className="flex h-screen w-64 flex-col bg-sidebar border-r">
+		<div className="sticky top-0 left-0 flex h-screen w-64 flex-col bg-sidebar border-r">
 			{/* Logo */}
 			<div className="flex h-16 items-center px-6 border-b">
 				<div className="flex items-center space-x-2">

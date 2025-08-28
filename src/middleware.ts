@@ -53,7 +53,7 @@ export function middleware(request: NextRequest) {
 		publicRoute.whenAuthenticated === "redirect"
 	) {
 		const redirectUrl = request.nextUrl.clone();
-		redirectUrl.pathname = "/";
+		redirectUrl.pathname = "/dashboard";
 		return NextResponse.redirect(redirectUrl);
 	}
 
