@@ -23,7 +23,12 @@ export default function PoliciesPage() {
 			{/* Header */}
 			<header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
 				<div className="container flex h-16 items-center">
-					<Button variant="ghost" size="icon" asChild className="mr-4">
+					<Button
+						variant="ghost"
+						size="icon"
+						asChild
+						className="mr-4"
+					>
 						<Link href="/">
 							<ArrowLeft className="h-4 w-4" />
 						</Link>
@@ -41,7 +46,8 @@ export default function PoliciesPage() {
 						Políticas de Privacidade
 					</h1>
 					<p className="text-lg text-muted-foreground">
-						StepCash - Transparência e conformidade legal para Angola
+						StepCash - Transparência e conformidade legal para
+						Angola
 					</p>
 					<p className="text-sm text-muted-foreground mt-2">
 						Última atualização: Janeiro de 2024
@@ -59,19 +65,29 @@ export default function PoliciesPage() {
 						</CardHeader>
 						<CardContent className="space-y-4">
 							<p>
-								Recolhemos apenas informações necessárias para o funcionamento
-								da plataforma:
+								Recolhemos apenas informações necessárias para o
+								funcionamento da plataforma:
 							</p>
 							<ul className="list-disc list-inside space-y-2 text-muted-foreground">
 								<li>Nome completo e endereço de email</li>
-								<li>Informações de login social (Google, GitHub, Microsoft)</li>
-								<li>Dados dos desafios financeiros criados por você</li>
-								<li>Histórico de investimentos e progresso das metas</li>
+								<li>
+									Informações de login social (Google, GitHub,
+									Microsoft)
+								</li>
+								<li>
+									Dados dos desafios financeiros criados por
+									você
+								</li>
+								<li>
+									Histórico de investimentos e progresso das
+									metas
+								</li>
 							</ul>
 							<div className="bg-primary/10 p-4 rounded-lg">
 								<p className="text-sm">
-									<strong>Compromisso:</strong> Não vendemos nem partilhamos
-									dados com terceiros sem consentimento explícito.
+									<strong>Compromisso:</strong> Não vendemos
+									nem partilhamos dados com terceiros sem
+									consentimento explícito.
 								</p>
 							</div>
 						</CardContent>
@@ -86,14 +102,25 @@ export default function PoliciesPage() {
 							</CardTitle>
 						</CardHeader>
 						<CardContent className="space-y-4">
-							<p>Os seus dados são utilizados exclusivamente para:</p>
+							<p>
+								Os seus dados são utilizados exclusivamente
+								para:
+							</p>
 							<ul className="list-disc list-inside space-y-2 text-muted-foreground">
 								<li>Autenticação e gestão da sua conta</li>
-								<li>Criação e acompanhamento de desafios financeiros</li>
-								<li>Cálculo de metas e progresso personalizado</li>
-								<li>Melhoria contínua da experiência do usuário</li>
 								<li>
-									Comunicação sobre atualizações importantes da plataforma
+									Criação e acompanhamento de desafios
+									financeiros
+								</li>
+								<li>
+									Cálculo de metas e progresso personalizado
+								</li>
+								<li>
+									Melhoria contínua da experiência do usuário
+								</li>
+								<li>
+									Comunicação sobre atualizações importantes
+									da plataforma
 								</li>
 							</ul>
 						</CardContent>
@@ -108,15 +135,26 @@ export default function PoliciesPage() {
 							</CardTitle>
 						</CardHeader>
 						<CardContent className="space-y-4">
-							<p>A segurança dos seus dados é nossa prioridade:</p>
+							<p>
+								A segurança dos seus dados é nossa prioridade:
+							</p>
 							<ul className="list-disc list-inside space-y-2 text-muted-foreground">
 								<li>
-									Dados armazenados em servidores seguros com criptografia
+									Dados armazenados em servidores seguros com
+									criptografia
 								</li>
-								<li>Acesso restrito apenas a pessoal autorizado</li>
-								<li>Backups regulares para prevenir perda de dados</li>
+								<li>
+									Acesso restrito apenas a pessoal autorizado
+								</li>
+								<li>
+									Backups regulares para prevenir perda de
+									dados
+								</li>
 								<li>Monitoramento contínuo de segurança</li>
-								<li>Conformidade com padrões internacionais de proteção</li>
+								<li>
+									Conformidade com padrões internacionais de
+									proteção
+								</li>
 							</ul>
 						</CardContent>
 					</Card>
@@ -126,32 +164,40 @@ export default function PoliciesPage() {
 						<CardHeader>
 							<CardTitle>4. Direitos do Usuário</CardTitle>
 							<CardDescription>
-								Baseado na Lei de Proteção de Dados de Angola (Lei n.º 22/11)
+								Baseado na Lei de Proteção de Dados de Angola
+								(Lei n.º 22/11)
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="space-y-4">
 							<p>Como usuário da StepCash, você tem direito a:</p>
 							<div className="grid md:grid-cols-2 gap-4">
 								<div className="space-y-2">
-									<h4 className="font-medium">Acesso aos Dados</h4>
+									<h4 className="font-medium">
+										Acesso aos Dados
+									</h4>
 									<p className="text-sm text-muted-foreground">
-										Solicitar uma cópia de todos os dados que temos sobre você
+										Solicitar uma cópia de todos os dados
+										que temos sobre você
 									</p>
 								</div>
 								<div className="space-y-2">
 									<h4 className="font-medium">Correção</h4>
 									<p className="text-sm text-muted-foreground">
-										Atualizar ou corrigir informações incorretas
+										Atualizar ou corrigir informações
+										incorretas
 									</p>
 								</div>
 								<div className="space-y-2">
 									<h4 className="font-medium">Exclusão</h4>
 									<p className="text-sm text-muted-foreground">
-										Solicitar a remoção completa dos seus dados
+										Solicitar a remoção completa dos seus
+										dados
 									</p>
 								</div>
 								<div className="space-y-2">
-									<h4 className="font-medium">Portabilidade</h4>
+									<h4 className="font-medium">
+										Portabilidade
+									</h4>
 									<p className="text-sm text-muted-foreground">
 										Exportar seus dados em formato legível
 									</p>
@@ -159,8 +205,9 @@ export default function PoliciesPage() {
 							</div>
 							<div className="bg-chart-3/10 p-4 rounded-lg">
 								<p className="text-sm">
-									<strong>Tempo de Resposta:</strong> Comprometemo-nos a
-									responder a pedidos em até 30 dias úteis.
+									<strong>Tempo de Resposta:</strong>{" "}
+									Comprometemo-nos a responder a pedidos em
+									até 30 dias úteis.
 								</p>
 							</div>
 						</CardContent>
@@ -173,13 +220,15 @@ export default function PoliciesPage() {
 						</CardHeader>
 						<CardContent className="space-y-4">
 							<p>
-								Ao usar a plataforma StepCash, você concorda com esta política
-								de privacidade. O consentimento pode ser retirado a qualquer
-								momento através do seu perfil ou entrando em contato conosco.
+								Ao usar a plataforma StepCash, você concorda com
+								esta política de privacidade. O consentimento
+								pode ser retirado a qualquer momento através do
+								seu perfil ou entrando em contato conosco.
 							</p>
 							<p className="text-sm text-muted-foreground">
-								Notificaremos sobre mudanças significativas nesta política
-								através do email cadastrado na sua conta.
+								Notificaremos sobre mudanças significativas
+								nesta política através do email cadastrado na
+								sua conta.
 							</p>
 						</CardContent>
 					</Card>
@@ -189,7 +238,8 @@ export default function PoliciesPage() {
 						<CardHeader>
 							<CardTitle>6. Contato Legal</CardTitle>
 							<CardDescription>
-								Para questões relacionadas à privacidade e proteção de dados
+								Para questões relacionadas à privacidade e
+								proteção de dados
 							</CardDescription>
 						</CardHeader>
 						<CardContent>
@@ -229,8 +279,8 @@ export default function PoliciesPage() {
 				{/* Footer da Página */}
 				<div className="mt-12 pt-8 border-t text-center">
 					<p className="text-sm text-muted-foreground mb-4">
-						Esta política está em conformidade com a legislação angolana de
-						proteção de dados.
+						Esta política está em conformidade com a legislação
+						angolana de proteção de dados.
 					</p>
 					<Button asChild>
 						<Link href="/dashboard">Voltar ao Dashboard</Link>
