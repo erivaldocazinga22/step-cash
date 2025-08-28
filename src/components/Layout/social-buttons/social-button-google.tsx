@@ -16,7 +16,7 @@ export function SocialButtonGoogle() {
 			type="button"
 			variant="outline"
 			onClick={signIn}
-			className="w-full gap-2 py-6"
+			className="w-full gap-2 py-4"
 		>
 			<Image
 				src="/images/Google-Logo.svg"

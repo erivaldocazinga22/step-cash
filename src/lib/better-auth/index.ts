@@ -7,12 +7,6 @@ export const auth = betterAuth({
 		provider: "postgresql",
 	}),
 	socialProviders: {
-		microsoft: {
-			clientId: process.env.MICROSOFT_CLIENT_ID as string,
-			clientSecret: process.env.MICROSOFT_CLIENT_SECRET as string,
-			tenantId: "common",
-			prompt: "select_account",
-		},
 		google: {
 			clientId: process.env.GOOGLE_CLIENT_ID as string,
 			clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,

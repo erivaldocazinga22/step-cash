@@ -1,10 +1,10 @@
 import { Separator } from "@radix-ui/react-separator";
-import { Github } from "lucide-react";
 
-import Image from "next/image";
 import { SignInForm } from "@/components/forms/sign-in.form";
-import { SocialButtonGoogle } from "@/components/Layout/social-buttons/social-button-google";
-import { Button } from "@/components/ui/button";
+import {
+	SocialButtonGithub,
+	SocialButtonGoogle,
+} from "@/components/Layout/social-buttons";
 
 export default async function SignInPage() {
 	return (
@@ -32,28 +32,8 @@ export default async function SignInPage() {
 								className="h-1 w-full"
 							/>
 						</div>
-						<Button
-							type="button"
-							variant="outline"
-							className="w-full gap-2 py-6"
-						>
-							<Image
-								src="/images/microsoft_icon_130876.svg"
-								alt="Microsoft Logo"
-								width={20}
-								height={20}
-							/>
-							<span>Microsoft</span>
-						</Button>
 						<SocialButtonGoogle />
-						<Button
-							type="button"
-							variant="outline"
-							className="w-full gap-2 py-6"
-						>
-							<Github />
-							<span>Github</span>
-						</Button>
+						<SocialButtonGithub />
 					</div>
 				</div>
 			</div>
