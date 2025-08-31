@@ -51,37 +51,25 @@ export function RegisterForm() {
 
 	const onSubmit = async (formData: RegisterSchemaValues) => {
 		try {
-			const { data, error } = await authClient.signUp.email(
+			await authClient.signUp.email(
 				{
 					name: formData.name,
 					email: formData.email,
 					password: formData.password,
 				},
 				{
-					onRequest: (ctx) => {
-						console.log("ON_REQUEST", { ctx });
-					},
-					onSuccess: (ctx) => {
-						console.log("ON_SUCCESS", { ctx });
-						router.replace("/");
+					onSuccess: () => {
+						toast.success("Conta criada com sucesso! 🎉");
+						router.replace("/dashboard");
 					},
 					onError: (ctx) => {
-						// display the error message
-						toast.error(ctx.error.message);
+						toast.error(
+							ctx.error.message ||
+								"Erro ao criar conta. Tente novamente.",
+						);
 					},
 				},
 			);
-
-			if (error) {
-				toast.error(
-					error.message || "Erro ao criar conta. Tente novamente.",
-				);
-				return;
-			}
-
-			toast.success("Conta criada com sucesso! 🎉", {
-				description: data.token,
-			});
 		} catch (err) {
 			console.error(err);
 			toast.error("Erro inesperado. Tente novamente.");

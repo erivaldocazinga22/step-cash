@@ -125,6 +125,7 @@ exports.Prisma.UserScalarFieldEnum = {
   name: 'name',
   email: 'email',
   emailVerified: 'emailVerified',
+  role: 'role',
   image: 'image',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'

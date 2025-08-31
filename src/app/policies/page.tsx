@@ -19,8 +19,7 @@ import {
 
 export default function PoliciesPage() {
 	return (
-		<div className="min-h-screen bg-background">
-			{/* Header */}
+		<div className="min-h-screen">
 			<header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
 				<div className="container flex h-16 items-center">
 					<Button
@@ -40,7 +39,6 @@ export default function PoliciesPage() {
 			</header>
 
 			<main className="container mx-auto py-12 px-4 max-w-4xl">
-				{/* Introdução */}
 				<div className="text-center mb-12">
 					<h1 className="font-playfair text-4xl font-bold mb-4">
 						Políticas de Privacidade
@@ -55,7 +53,6 @@ export default function PoliciesPage() {
 				</div>
 
 				<div className="space-y-8">
-					{/* Coleta de Dados */}
 					<Card>
 						<CardHeader>
 							<CardTitle className="flex items-center gap-2">
@@ -93,7 +90,6 @@ export default function PoliciesPage() {
 						</CardContent>
 					</Card>
 
-					{/* Uso dos Dados */}
 					<Card>
 						<CardHeader>
 							<CardTitle className="flex items-center gap-2">
@@ -126,7 +122,6 @@ export default function PoliciesPage() {
 						</CardContent>
 					</Card>
 
-					{/* Armazenamento e Segurança */}
 					<Card>
 						<CardHeader>
 							<CardTitle className="flex items-center gap-2">
@@ -159,7 +154,6 @@ export default function PoliciesPage() {
 						</CardContent>
 					</Card>
 
-					{/* Direitos do Usuário */}
 					<Card>
 						<CardHeader>
 							<CardTitle>4. Direitos do Usuário</CardTitle>
@@ -213,7 +207,6 @@ export default function PoliciesPage() {
 						</CardContent>
 					</Card>
 
-					{/* Consentimento */}
 					<Card>
 						<CardHeader>
 							<CardTitle>5. Consentimento</CardTitle>
@@ -233,7 +226,6 @@ export default function PoliciesPage() {
 						</CardContent>
 					</Card>
 
-					{/* Contato Legal */}
 					<Card>
 						<CardHeader>
 							<CardTitle>6. Contato Legal</CardTitle>
@@ -275,18 +267,16 @@ export default function PoliciesPage() {
 						</CardContent>
 					</Card>
 				</div>
-
-				{/* Footer da Página */}
-				<div className="mt-12 pt-8 border-t text-center">
-					<p className="text-sm text-muted-foreground mb-4">
-						Esta política está em conformidade com a legislação
-						angolana de proteção de dados.
-					</p>
-					<Button asChild>
-						<Link href="/dashboard">Voltar ao Dashboard</Link>
-					</Button>
-				</div>
 			</main>
+			<div className="mt-12 py-8 border-t text-center">
+				<p className="text-sm text-muted-foreground mb-4">
+					Esta política está em conformidade com a legislação angolana
+					de proteção de dados.
+				</p>
+				<Button asChild>
+					<Link href="/dashboard">Voltar ao Dashboard</Link>
+				</Button>
+			</div>
 		</div>
 	);
 }

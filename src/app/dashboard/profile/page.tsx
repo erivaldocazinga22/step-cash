@@ -1,5 +1,10 @@
-import { ArrowLeft, Camera, Save, Trash2 } from "lucide-react";
+import { ArrowLeft, Camera, Save } from "lucide-react";
+import { headers } from "next/headers";
 import Link from "next/link";
+import { ChangeAvatarUser } from "@/components/change-avatar-user";
+import { ChangePassword } from "@/components/change-password";
+import { DeleteAccount } from "@/components/delete-account";
+import { NotificationPreferences } from "@/components/notification-preferences";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,12 +18,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { auth } from "@/lib/better-auth";
-import { headers } from "next/headers";
 
 export default async function ProfilePage() {
 	const session = await auth.api.getSession({
-		headers: await headers()
-	})
+		headers: await headers(),
+	});
 	return (
 		<main className="flex-1 p-6">
 			<div className="max-w-4xl mx-auto">
@@ -49,24 +53,7 @@ export default async function ProfilePage() {
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="space-y-6">
-							{/* Avatar */}
-							<div className="flex items-center space-x-4">
-								<Avatar className="h-20 w-20">
-									<AvatarImage src={`${session?.user.image}`} />
-									<AvatarFallback className="text-lg">
-										{session?.user.name.substring(0, 2).toUpperCase()}
-									</AvatarFallback>
-								</Avatar>
-								<div>
-									<Button variant="outline" size="sm">
-										<Camera className="mr-2 h-4 w-4" />
-										Alterar Foto
-									</Button>
-									<p className="text-sm text-muted-foreground mt-1">
-										JPG, PNG ou GIF. Máximo 2MB.
-									</p>
-								</div>
-							</div>
+							<ChangeAvatarUser />
 
 							{/* Campos do Formulário */}
 							<div className="grid md:grid-cols-2 gap-4">
@@ -118,57 +105,7 @@ export default async function ProfilePage() {
 						</CardContent>
 					</Card>
 
-					{/* Preferências */}
-					<Card>
-						<CardHeader>
-							<CardTitle>Preferências</CardTitle>
-							<CardDescription>
-								Configure suas preferências de notificação e
-								privacidade
-							</CardDescription>
-						</CardHeader>
-						<CardContent className="space-y-6">
-							<div className="flex items-center justify-between">
-								<div className="space-y-0.5">
-									<Label>Notificações por Email</Label>
-									<p className="text-sm text-muted-foreground">
-										Receber lembretes sobre seus desafios
-									</p>
-								</div>
-								<Switch defaultChecked />
-							</div>
-
-							<div className="flex items-center justify-between">
-								<div className="space-y-0.5">
-									<Label>Notificações Push</Label>
-									<p className="text-sm text-muted-foreground">
-										Receber notificações no navegador
-									</p>
-								</div>
-								<Switch />
-							</div>
-
-							<div className="flex items-center justify-between">
-								<div className="space-y-0.5">
-									<Label>Relatórios Semanais</Label>
-									<p className="text-sm text-muted-foreground">
-										Receber resumo semanal do progresso
-									</p>
-								</div>
-								<Switch defaultChecked />
-							</div>
-
-							<div className="flex items-center justify-between">
-								<div className="space-y-0.5">
-									<Label>Modo Escuro Automático</Label>
-									<p className="text-sm text-muted-foreground">
-										Seguir configuração do sistema
-									</p>
-								</div>
-								<Switch defaultChecked />
-							</div>
-						</CardContent>
-					</Card>
+					<NotificationPreferences />
 
 					{/* Estatísticas da Conta */}
 					<Card>
@@ -229,32 +166,8 @@ export default async function ProfilePage() {
 								<Button variant="outline">Exportar</Button>
 							</div>
 
-							<div className="flex items-center justify-between p-4 border rounded-lg">
-								<div>
-									<h4 className="font-medium">
-										Alterar Senha
-									</h4>
-									<p className="text-sm text-muted-foreground">
-										Atualize sua senha de acesso
-									</p>
-								</div>
-								<Button variant="outline">Alterar</Button>
-							</div>
-
-							<div className="flex items-center justify-between p-4 border border-destructive/20 rounded-lg">
-								<div>
-									<h4 className="font-medium text-destructive">
-										Desativar Conta
-									</h4>
-									<p className="text-sm text-muted-foreground">
-										Desative temporariamente sua conta
-									</p>
-								</div>
-								<Button variant="destructive" size="sm">
-									<Trash2 className="mr-2 h-4 w-4" />
-									Desativar
-								</Button>
-							</div>
+							<ChangePassword />
+							<DeleteAccount />
 						</CardContent>
 					</Card>
 				</div>
