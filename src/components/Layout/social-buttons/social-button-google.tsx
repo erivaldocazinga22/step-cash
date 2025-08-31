@@ -7,6 +7,7 @@ export function SocialButtonGoogle() {
 	const signIn = async () => {
 		const data = await authClient.signIn.social({
 			provider: "google",
+			callbackURL: "/dashbaord"
 		});
 
 		console.log("GOOGLE SOCIAL: ", { data });

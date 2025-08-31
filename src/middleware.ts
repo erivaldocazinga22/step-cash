@@ -6,9 +6,9 @@ import {
 
 const publicRoutes = [
 	{ path: "/sign-in", whenAuthenticated: "redirect" },
+	{ path: "/register", whenAuthenticated: "redirect" },
 	{ path: "/policies", whenAuthenticated: "next" },
 	{ path: "/", whenAuthenticated: "next" },
-	{ path: "/dasboard", whenAuthenticated: "next" },
 	{ path: "/images", whenAuthenticated: "next" },
 ] as const;
 const REDIRECT_WHEN_NOT_AUTHENTICATED_ROUTE = "/sign-in";
@@ -31,7 +31,7 @@ export function middleware(request: NextRequest) {
 
 	const path = request.nextUrl.pathname;
 	const publicRoute = publicRoutes.find((route) => route.path === path);
-	const authToken = request.cookies.get("sc-auth.session-token");
+	const authToken = request.cookies.get("better-auth.session_token");
 
 	if (!authToken && publicRoute) {
 		return NextResponse.next({

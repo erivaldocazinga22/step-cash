@@ -12,8 +12,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { auth } from "@/lib/better-auth";
+import { headers } from "next/headers";
 
-export default function ProfilePage() {
+export default async function ProfilePage() {
+	const session = await auth.api.getSession({
+		headers: await headers()
+	})
 	return (
 		<main className="flex-1 p-6">
 			<div className="max-w-4xl mx-auto">
@@ -47,9 +52,9 @@ export default function ProfilePage() {
 							{/* Avatar */}
 							<div className="flex items-center space-x-4">
 								<Avatar className="h-20 w-20">
-									<AvatarImage src="/user-profile-illustration.png" />
+									<AvatarImage src={`${session?.user.image}`} />
 									<AvatarFallback className="text-lg">
-										EM
+										{session?.user.name.substring(0, 2).toUpperCase()}
 									</AvatarFallback>
 								</Avatar>
 								<div>
@@ -69,7 +74,7 @@ export default function ProfilePage() {
 									<Label htmlFor="name">Nome Completo</Label>
 									<Input
 										id="name"
-										defaultValue="Erivaldo Malebo"
+										defaultValue={`${session?.user.name}`}
 									/>
 								</div>
 								<div className="space-y-2">
@@ -77,7 +82,7 @@ export default function ProfilePage() {
 									<Input
 										id="email"
 										type="email"
-										defaultValue="erivaldomalebo2206@gmail.com"
+										defaultValue={session?.user.email}
 										disabled
 									/>
 									<p className="text-xs text-muted-foreground">
